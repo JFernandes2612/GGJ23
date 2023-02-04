@@ -51,11 +51,28 @@ public class TipController : MonoBehaviour
 
         if (moves.Count >= 1)
         {
-            if (moves.Peek() != position2DBox) {
+            if (moves.Count >= 2) {
+                Vector2Int currentMove = moves.Pop();
+
+                if (moves.Peek() == position2DBox) {
+                    moves.Pop();
+                    Destroy(instantiatedRootSegments.Pop());
+                    Destroy(instantiatedRootSegments.Pop());
+                } else if (currentMove == position2DBox) {
+                    Destroy(instantiatedRootSegments.Pop());
+                } else {
+                    moves.Push(currentMove);
+                }
+
+                moves.Push(position2DBox);
+                GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, rotationCopy);
+                instantiatedRootSegments.Push(instantiatedObject);
+            } else if (moves.Peek() != position2DBox) {
                 moves.Push(position2DBox);
                 GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, rotationCopy);
                 instantiatedRootSegments.Push(instantiatedObject);
             }
+
         } else {
             moves.Push(position2DBox);
             GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, rotationCopy);
