@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5609366737113207303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.778, y: -0.754, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 69bb3ebc8b9024c47a283d7c5ffb5e88, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e241efd285e66544497ca2891b14a2ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -126,7 +126,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -146,8 +146,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90224b7e29132eb4bbd6ba1b51942bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagedSprites:
-  - {fileID: 21300000, guid: 03fbfb672a6870d41ae7a40acd7c3f1c, type: 3}
-  - {fileID: 21300000, guid: 40aeb2c4e8af48b4988b1317365f33e8, type: 3}
-  - {fileID: 21300000, guid: 1af800f84cf344a4eaa3fcf350b6f1ee, type: 3}
-  - {fileID: 21300000, guid: f9418ba25ebf10643809154f355005bc, type: 3}
+  damagedSpritesDown:
+  - {fileID: 21300000, guid: 38f666e187f87bf40a062ee424922877, type: 3}
+  - {fileID: 21300000, guid: 06afc1b5c2bb9704dbec8f9000474d4a, type: 3}
+  - {fileID: 21300000, guid: 8a180b8a82b669a4e82e849e5a8c6b1f, type: 3}
+  - {fileID: 21300000, guid: 71833083729989549adc70ab433bad3e, type: 3}
+  damagedSpritesLeft:
+  - {fileID: 21300000, guid: 090214672632e3b41824e49670da6f02, type: 3}
+  - {fileID: 21300000, guid: 61b4d2bbc8ecd514bb7afaf444ff0009, type: 3}
+  - {fileID: 21300000, guid: 1c997bb7f3c04ae469c0fdf9d8d38c5a, type: 3}
+  - {fileID: 21300000, guid: ea75c135e72970b4fafbe5a48f0e3b8a, type: 3}
+  damagedSpritesRight:
+  - {fileID: 21300000, guid: 4f58ebbfb8d4fa4499e11fb7b9bc2c88, type: 3}
+  - {fileID: 21300000, guid: f018a128bf0e30f429639f00e06243a8, type: 3}
+  - {fileID: 21300000, guid: 48702207dd15c3b46b329f74e7f1f99b, type: 3}
+  - {fileID: 21300000, guid: 5c8d8cff66f290d459e665a20bff2db6, type: 3}
+  damagedSpritesUp:
+  - {fileID: 21300000, guid: 8ba18a65e566c444a8195e3792960867, type: 3}
+  - {fileID: 21300000, guid: 28f59cca15ad1a440ac4a578ba878016, type: 3}
+  - {fileID: 21300000, guid: 879572369ecc2a247af2352751ed5724, type: 3}
+  - {fileID: 21300000, guid: 3ff10959b342ce34ab95c6e145d09d24, type: 3}

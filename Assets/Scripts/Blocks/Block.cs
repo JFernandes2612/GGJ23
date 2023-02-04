@@ -12,7 +12,7 @@ public class Block : MonoBehaviour
     protected int lootAmount;
 
     [SerializeField]
-    private Sprite[] damagedSprites;
+    private Sprite[] damagedSpritesDown, damagedSpritesLeft, damagedSpritesRight, damagedSpritesUp;
     protected SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
@@ -29,10 +29,21 @@ public class Block : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Sprite[] spritesArray;
+            Vector2 collisionDirection = transform.position - collision.transform.position;
+            if(Mathf.Abs(collisionDirection.x) > Mathf.Abs(collisionDirection.y)) //hitting horizontally
+            {
+                spritesArray = (collisionDirection.x < 0) ? damagedSpritesRight : damagedSpritesLeft;
+            }
+            else //hitting vertically
+            {
+                spritesArray = (collisionDirection.y < 0) ? damagedSpritesDown : damagedSpritesUp;
+            }
+
             if (durability > 0)
             {
                 durability--;
-                spriteRenderer.sprite = damagedSprites[durability / durabilityFactor];
+                spriteRenderer.sprite = spritesArray[durability / durabilityFactor];
             } else if (durability <= 0) {
                 Destroy(gameObject);
 
