@@ -17,17 +17,20 @@ public class Block : MonoBehaviour
 
     void Update()
     {
-        if(durability == 0) {
+        if (durability == 0)
+        {
             Destroy(gameObject);
 
-            for (int i = 0; i < lootAmount; i++) {
+            for (int i = 0; i < lootAmount; i++)
+            {
                 float drop = Random.Range(0.0f, 1.0f);
 
                 foreach (KeyValuePair<string, float> entry in lootTable)
                 {
-                    if (drop < entry.Value) {
+                    if (drop < entry.Value)
+                    {
                         // Change to actual drop behaviour
-                        Debug.Log("Dropped item #" + (i+1) + ": " + entry.Key);
+                        Debug.Log("Dropped item #" + (i + 1) + ": " + entry.Key);
                         break;
                     }
                 }
@@ -37,7 +40,7 @@ public class Block : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
             if (durability > 0)
                 durability--;
     }
