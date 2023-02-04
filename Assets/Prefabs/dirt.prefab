@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 528075311513602517}
   - component: {fileID: 528075311513602516}
   - component: {fileID: 528075311513602519}
-  - component: {fileID: 528075311513602522}
+  - component: {fileID: 7656268451869308821}
   - component: {fileID: 528075311513602518}
   m_Layer: 0
-  m_Name: block
+  m_Name: dirt
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528075311513602513}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.56, y: -2.45, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -108,7 +108,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &528075311513602522
+--- !u!114 &7656268451869308821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,10 +117,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 528075311513602513}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a790535288bcf09488616a3e5fdc4b4e, type: 3}
+  m_Script: {fileID: 11500000, guid: e212a558b05fe864eaf00eee5f5538d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durability: 4
 --- !u!61 &528075311513602518
 BoxCollider2D:
   m_ObjectHideFlags: 0

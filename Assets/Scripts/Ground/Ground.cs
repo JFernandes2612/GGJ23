@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Ground : MonoBehaviour
 {
-    int groundWidth = 25;
-    int groundHeight= 25;
+    int groundWidth = 23;
+    int groundHeight= 10;
     GameObject[,] blocks;
     public GameObject[] blockPrefabs;
     int blockOffset = 1;
@@ -20,8 +20,8 @@ public class Ground : MonoBehaviour
             float x = 0f;
             for (int j = 0; j < groundWidth; j++)
             {
-                int selectedPrefabID = Random.Range(0, blockPrefabs.Length - 1);
-                Vector3 blockPos = new Vector3(x, y);
+                int selectedPrefabID = Random.Range(0, blockPrefabs.Length);
+                Vector3 blockPos = transform.position + new Vector3(x, y);
                 GameObject newBlock = Instantiate(blockPrefabs[selectedPrefabID], blockPos, Quaternion.Euler(new Vector3(0,0,0)));
                 blocks[i, j] = newBlock;
                 x += blockOffset;
@@ -33,6 +33,6 @@ public class Ground : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
