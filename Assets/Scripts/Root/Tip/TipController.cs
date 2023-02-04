@@ -7,6 +7,9 @@ public class TipController : MonoBehaviour
 
     public GameObject rootSegment;
 
+    public GameObject bullet;
+    public float bulletSpeed = 100.0f;
+
     private Vector3 direction = new Vector3();
     private Vector3 rotation = new Vector3();
 
@@ -27,16 +30,27 @@ public class TipController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = transform.position.y >= -0.5 ? 0 : Input.GetAxisRaw("Horizontal");
+        bool atTop = transform.position.y >= -0.5;
+
+        float horizontalInput = atTop ? 0 : Input.GetAxisRaw("Horizontal");
         float verticalInput = 0.0f;
 
         if (horizontalInput == 0.0f)
         {
-            verticalInput = transform.position.y >= -0.5 ? (Input.GetAxisRaw("Vertical") == -1 ? -1 : 0) : Input.GetAxisRaw("Vertical");
+            verticalInput = atTop ? (Input.GetAxisRaw("Vertical") == -1 ? -1 : 0) : Input.GetAxisRaw("Vertical");
         }
 
         direction = new Vector3(horizontalInput, verticalInput);
         rotation = new Vector3(0, 0, 90.0f * horizontalInput + (verticalInput != 1.0f ? 180.0f : 0.0f));
+
+        if (atTop && Input.GetButtonDown("Fire1")) {
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mouseDirection = new Vector2(mouseWorldPos.x, mouseWorldPos.y).normalized;
+
+            GameObject newBullet = Instantiate(bullet, mouseDirection, Quaternion.identity);
+
+            newBullet.GetComponent<Rigidbody2D>().AddForce(mouseDirection * bulletSpeed);
+        }
     }
 
     void FixedUpdate()
@@ -47,7 +61,6 @@ public class TipController : MonoBehaviour
         Vector2Int position2DBox = new Vector2Int(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y));
 
         Vector3 positionCopy = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0.0f);
-        Quaternion rotationCopy = Quaternion.Euler(transform.eulerAngles);
 
         if (moves.Count >= 1)
         {
@@ -65,17 +78,17 @@ public class TipController : MonoBehaviour
                 }
 
                 moves.Push(position2DBox);
-                GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, rotationCopy);
+                GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
                 instantiatedRootSegments.Push(instantiatedObject);
             } else if (moves.Peek() != position2DBox) {
                 moves.Push(position2DBox);
-                GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, rotationCopy);
+                GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
                 instantiatedRootSegments.Push(instantiatedObject);
             }
 
         } else {
             moves.Push(position2DBox);
-            GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, rotationCopy);
+            GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
             instantiatedRootSegments.Push(instantiatedObject);
         }
 

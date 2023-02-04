@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Block")
+        if (collision.gameObject.tag == "Block" || collision.gameObject.tag == "Player")
             Destroy(gameObject);
             // END GAME OR SOMETHING
     }
