@@ -5,14 +5,19 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
     protected int durability;
+    protected int durabilityFactor;
+    protected int baseDurability = 4;
 
     protected Dictionary<string, float> lootTable;
     protected int lootAmount;
 
+    [SerializeField]
+    private Sprite[] damagedSprites;
+    protected SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     void Update()
@@ -41,7 +46,12 @@ public class Block : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
+        {
             if (durability > 0)
+            {
                 durability--;
+                spriteRenderer.sprite = damagedSprites[durability / durabilityFactor];
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &528075311513602513
+--- !u!1 &5609366737113207303
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 528075311513602517}
-  - component: {fileID: 528075311513602516}
-  - component: {fileID: 528075311513602519}
-  - component: {fileID: 528075311513602518}
-  - component: {fileID: 1476458329923968832}
+  - component: {fileID: 6161621885006145124}
+  - component: {fileID: 9118834681029916776}
+  - component: {fileID: 7988117753427592767}
+  - component: {fileID: 559410014666836825}
+  - component: {fileID: 9014853855923727027}
   m_Layer: 0
   m_Name: rockyDirt
   m_TagString: Block
@@ -20,28 +20,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &528075311513602517
+--- !u!4 &6161621885006145124
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528075311513602513}
+  m_GameObject: {fileID: 5609366737113207303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.778, y: -0.754, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &528075311513602516
+--- !u!212 &9118834681029916776
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528075311513602513}
+  m_GameObject: {fileID: 5609366737113207303}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 69bb3ebc8b9024c47a283d7c5ffb5e88, type: 3}
   m_Color: {r: 0.3301887, g: 0.26290497, b: 0.26290497, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -87,14 +87,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &528075311513602519
+--- !u!50 &7988117753427592767
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528075311513602513}
+  m_GameObject: {fileID: 5609366737113207303}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -108,13 +108,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &528075311513602518
+--- !u!61 &559410014666836825
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528075311513602513}
+  m_GameObject: {fileID: 5609366737113207303}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -134,15 +134,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1476458329923968832
+--- !u!114 &9014853855923727027
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 528075311513602513}
+  m_GameObject: {fileID: 5609366737113207303}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90224b7e29132eb4bbd6ba1b51942bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damagedSprites:
+  - {fileID: 21300000, guid: 03fbfb672a6870d41ae7a40acd7c3f1c, type: 3}
+  - {fileID: 21300000, guid: 40aeb2c4e8af48b4988b1317365f33e8, type: 3}
+  - {fileID: 21300000, guid: 1af800f84cf344a4eaa3fcf350b6f1ee, type: 3}
+  - {fileID: 21300000, guid: f9418ba25ebf10643809154f355005bc, type: 3}
+  spriteRenderer: {fileID: 0}

@@ -7,7 +7,10 @@ public class Rock : Block
 {
     void Start()
     {
-        durability = 25;
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        durabilityFactor = 4;
+        durability = baseDurability * durabilityFactor;
         lootTable = new Dictionary<string, float>();
 
         lootTable.Add("C", 0.4f);   // 40%

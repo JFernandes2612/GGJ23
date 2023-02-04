@@ -7,7 +7,10 @@ public class RockyDirt : Block
 {
     void Start()
     {
-        durability = 10;
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        durabilityFactor = 2;
+        durability = baseDurability * durabilityFactor;
         lootTable = new Dictionary<string, float>();
 
         lootTable.Add("C", 0.6f);   // 60%

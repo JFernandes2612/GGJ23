@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class Dirt : Block
 {
+
     void Start()
     {
-        durability = 4;
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+
+        durabilityFactor = 1;
+        durability = baseDurability * durabilityFactor;
         lootTable = new Dictionary<string, float>();
 
         lootTable.Add("C", 0.40f); // 40%
