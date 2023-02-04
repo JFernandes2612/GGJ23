@@ -81,16 +81,19 @@ public class TipController : MonoBehaviour
 
                 moves.Push(position2DBox);
                 GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
+                instantiatedObject.transform.eulerAngles = rotation;
                 instantiatedRootSegments.Push(instantiatedObject);
             } else if (moves.Peek() != position2DBox) {
                 moves.Push(position2DBox);
                 GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
+                instantiatedObject.transform.eulerAngles = rotation;
                 instantiatedRootSegments.Push(instantiatedObject);
             }
 
         } else {
             moves.Push(position2DBox);
             GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
+            instantiatedObject.transform.eulerAngles = rotation;
             instantiatedRootSegments.Push(instantiatedObject);
         }
 
