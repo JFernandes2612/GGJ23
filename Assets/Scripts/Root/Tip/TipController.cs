@@ -46,11 +46,6 @@ public class TipController : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = 0.0f;
 
-        if (horizontalInput == 0.0f && verticalInput == 0.0f)
-        {
-
-        }
-
         if (horizontalInput == 0.0f)
         {
             verticalInput = Input.GetAxisRaw("Vertical");
