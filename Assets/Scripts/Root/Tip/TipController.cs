@@ -43,7 +43,7 @@ public class TipController : MonoBehaviour
         direction = new Vector3(horizontalInput, verticalInput);
         rotation = new Vector3(0, 0, 90.0f * horizontalInput + (verticalInput != 1.0f ? 180.0f : 0.0f));
 
-        if (atTop && Input.GetButtonDown("Fire1")) {
+        if (atTop && Input.GetButtonDown("Fire1") && moves.Count == 1) {
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mouseDirection = new Vector2(mouseWorldPos.x, mouseWorldPos.y).normalized;
 
