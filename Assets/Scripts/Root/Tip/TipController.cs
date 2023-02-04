@@ -7,7 +7,6 @@ public class TipController : MonoBehaviour
 
     public GameObject rootSegment;
 
-    private Vector3 prevPosition = new Vector3();
     private Vector3 direction = new Vector3();
     private Vector3 rotation = new Vector3();
 
@@ -42,37 +41,27 @@ public class TipController : MonoBehaviour
 
     void FixedUpdate()
     {
-        prevPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         transform.position = transform.position + direction * blockWidth;
         transform.eulerAngles = rotation;
 
-        Vector2Int prevPosition2DBox = new Vector2Int((int)prevPosition.x, (int)prevPosition.y);
-        Vector2Int position2DBox = new Vector2Int((int)transform.position.x, (int)transform.position.y);
+        Vector2Int position2DBox = new Vector2Int(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y));
 
-        Vector3 positionCopy = new Vector3((int)transform.position.x, (int)transform.position.y, 0.0f);
+        Vector3 positionCopy = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0.0f);
         Quaternion rotationCopy = Quaternion.Euler(transform.eulerAngles);
 
-        if (prevPosition2DBox != position2DBox)
+        if (moves.Count >= 1)
         {
-            if (moves.Count > 1)
-            {
-                Vector2Int holdValue = moves.Pop();
-
-                if (moves.Peek() == position2DBox)
-                {
-                    moves.Pop();
-                    Destroy(instantiatedRootSegments.Pop());
-                    Destroy(instantiatedRootSegments.Pop());
-                }
-                else
-                {
-                    moves.Push(holdValue);
-                }
+            if (moves.Peek() != position2DBox) {
+                moves.Push(position2DBox);
+                GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, rotationCopy);
+                instantiatedRootSegments.Push(instantiatedObject);
             }
+        } else {
             moves.Push(position2DBox);
             GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, rotationCopy);
             instantiatedRootSegments.Push(instantiatedObject);
         }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
