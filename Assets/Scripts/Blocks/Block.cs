@@ -22,8 +22,19 @@ public class Block : MonoBehaviour
 
     void Update()
     {
-        if (durability == 0)
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
         {
+            if (durability > 0)
+            {
+                durability--;
+                spriteRenderer.sprite = damagedSprites[durability / durabilityFactor];
+            }
+        } else if (durability <= 0) {
             Destroy(gameObject);
 
             for (int i = 0; i < lootAmount; i++)
@@ -39,18 +50,6 @@ public class Block : MonoBehaviour
                         break;
                     }
                 }
-            }
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            if (durability > 0)
-            {
-                durability--;
-                spriteRenderer.sprite = damagedSprites[durability / durabilityFactor];
             }
         }
     }
