@@ -12,6 +12,9 @@ public class TipController : MonoBehaviour
     private Vector3 rotation = new Vector3();
     private float blockWidth = 0.1f;
 
+    private Stack<Vector2Int> moves = new Stack<Vector2Int>();
+    private Stack<GameObject> instantiatedRootSegments = new Stack<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,11 +40,29 @@ public class TipController : MonoBehaviour
     {
         prevPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         transform.position = transform.position + direction * blockWidth;
-
-        if ((int)transform.position.x != (int)prevPosition.x || (int)transform.position.y != (int)prevPosition.y) {
-            Instantiate(rootSegment, new Vector3((int)transform.position.x, (int)transform.position.y, 0.0f), Quaternion.Euler(transform.eulerAngles));
-        }
-
         transform.eulerAngles = rotation;
+
+        Vector2Int prevPosition2DBox = new Vector2Int((int)prevPosition.x, (int)prevPosition.y);
+        Vector2Int position2DBox = new Vector2Int((int)transform.position.x, (int)transform.position.y);
+
+        Vector3 positionCopy = new Vector3((int)transform.position.x, (int)transform.position.y, 0.0f);
+        Quaternion rotationCopy = Quaternion.Euler(transform.eulerAngles);
+
+        if (prevPosition2DBox != position2DBox) {
+            if (moves.Count > 1) {
+                Vector2Int holdValue = moves.Pop();
+
+                if (moves.Peek() == position2DBox) {
+                    moves.Pop();
+                    Destroy(instantiatedRootSegments.Pop());
+                    Destroy(instantiatedRootSegments.Pop());
+                } else {
+                    moves.Push(holdValue);
+                }
+            }
+            moves.Push(position2DBox);
+            GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, rotationCopy);
+            instantiatedRootSegments.Push(instantiatedObject);
+        }
     }
 }
