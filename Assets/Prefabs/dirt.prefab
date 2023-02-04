@@ -76,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d111d3a349f009f40add849228347f59, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2043b1a5f3305f947a6b4cbcbc2f017f, type: 3}
   m_Color: {r: 0.3773585, g: 0.05873977, b: 0.05873977, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -120,12 +120,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e212a558b05fe864eaf00eee5f5538d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagedSprites:
-  - {fileID: 21300000, guid: 2aadebd3776d61145bb96fe4977cbb19, type: 3}
-  - {fileID: 21300000, guid: 13e50caa8ce7f004ca6aa5f5f1e9074f, type: 3}
-  - {fileID: 21300000, guid: 8895ec758be6ba54c9f0463a07599942, type: 3}
-  - {fileID: 21300000, guid: aff94fc75e8d32f449e849e15537aa69, type: 3}
-  spriteRenderer: {fileID: 0}
+  damagedSpritesDown:
+  - {fileID: 21300000, guid: 10d80d7776bcde240aa79052caa8c80a, type: 3}
+  - {fileID: 21300000, guid: 2a6921ad254d5a346a5678fdba742fe6, type: 3}
+  - {fileID: 21300000, guid: 29970e8e6a353f842932730e92ee1baa, type: 3}
+  - {fileID: 21300000, guid: e6c5d1a0a47adb34593adf35c41f2a8c, type: 3}
+  damagedSpritesLeft:
+  - {fileID: 21300000, guid: 5f85a9cf6636f414e82964d3ef0a80dd, type: 3}
+  - {fileID: 21300000, guid: 2c5ed6ccd363955439b72fe0581ca9d5, type: 3}
+  - {fileID: 21300000, guid: aaef866d3aa928041b951999775698f3, type: 3}
+  - {fileID: 21300000, guid: 1138dfeb9730bf84795f8e36e2ccdbd8, type: 3}
+  damagedSpritesRight:
+  - {fileID: 21300000, guid: 65a05f332d2fe5948b82e5ea327a4149, type: 3}
+  - {fileID: 21300000, guid: 808e20089df98224a83fd4dffd66643e, type: 3}
+  - {fileID: 21300000, guid: 150a8359d7d576d428e36a04b33ca3b8, type: 3}
+  - {fileID: 21300000, guid: 0e0f921b7274e4045921986dba3215f1, type: 3}
+  damagedSpritesUp:
+  - {fileID: 21300000, guid: e7257fcb74747804a8c3be098959fe0a, type: 3}
+  - {fileID: 21300000, guid: 4bfdaf39ecf4502409180d4a42044424, type: 3}
+  - {fileID: 21300000, guid: 5941598657d551d4fa0a68be69db8c2c, type: 3}
+  - {fileID: 21300000, guid: 923f13781ef67774c8f06642c572bc6d, type: 3}
 --- !u!61 &528075311513602518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,8 +157,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

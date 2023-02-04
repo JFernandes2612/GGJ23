@@ -12,7 +12,7 @@ public class Block : MonoBehaviour
     protected int lootAmount;
 
     [SerializeField]
-    private Sprite[] damagedSprites;
+    private Sprite[] damagedSpritesDown, damagedSpritesLeft, damagedSpritesRight, damagedSpritesUp;
     protected SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
@@ -50,7 +50,7 @@ public class Block : MonoBehaviour
             if (durability > 0)
             {
                 durability--;
-                spriteRenderer.sprite = damagedSprites[durability / durabilityFactor];
+                spriteRenderer.sprite = damagedSpritesDown[durability / durabilityFactor];
             }
         }
     }

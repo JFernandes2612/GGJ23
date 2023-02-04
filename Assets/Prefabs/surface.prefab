@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5609366737113207303
+--- !u!1 &4602961837155957677
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6161621885006145124}
-  - component: {fileID: 9118834681029916776}
-  - component: {fileID: 7988117753427592767}
-  - component: {fileID: 559410014666836825}
-  - component: {fileID: 9014853855923727027}
+  - component: {fileID: 8808925908965634729}
+  - component: {fileID: 9222361462672893410}
+  - component: {fileID: 6511137534694518799}
+  - component: {fileID: 255078424107973727}
+  - component: {fileID: 1269188946705790763}
   m_Layer: 0
-  m_Name: rockyDirt
+  m_Name: surface
   m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6161621885006145124
+--- !u!4 &8808925908965634729
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5609366737113207303}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.778, y: -0.754, z: 0}
+  m_GameObject: {fileID: 4602961837155957677}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.008, y: -0.377, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &9118834681029916776
+--- !u!212 &9222361462672893410
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5609366737113207303}
+  m_GameObject: {fileID: 4602961837155957677}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -76,25 +76,25 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e241efd285e66544497ca2891b14a2ff, type: 3}
-  m_Color: {r: 0.3301887, g: 0.26290497, b: 0.26290497, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 7eea8eed712d92b488193d54bd914b44, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &7988117753427592767
+--- !u!50 &6511137534694518799
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5609366737113207303}
+  m_GameObject: {fileID: 4602961837155957677}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -108,13 +108,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &559410014666836825
+--- !u!61 &255078424107973727
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5609366737113207303}
+  m_GameObject: {fileID: 4602961837155957677}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -125,8 +125,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
-    newSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -134,35 +134,35 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &9014853855923727027
+--- !u!114 &1269188946705790763
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5609366737113207303}
+  m_GameObject: {fileID: 4602961837155957677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90224b7e29132eb4bbd6ba1b51942bda, type: 3}
+  m_Script: {fileID: 11500000, guid: e212a558b05fe864eaf00eee5f5538d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damagedSpritesDown:
-  - {fileID: 21300000, guid: 71833083729989549adc70ab433bad3e, type: 3}
-  - {fileID: 21300000, guid: 8a180b8a82b669a4e82e849e5a8c6b1f, type: 3}
-  - {fileID: 21300000, guid: 06afc1b5c2bb9704dbec8f9000474d4a, type: 3}
-  - {fileID: 21300000, guid: 38f666e187f87bf40a062ee424922877, type: 3}
+  - {fileID: 21300000, guid: 27acef01ca2fcef40bf981bc3b63f6ae, type: 3}
+  - {fileID: 21300000, guid: 204368ebaea400e49a8b81f99bc41c46, type: 3}
+  - {fileID: 21300000, guid: 6112cd2b60b6d554f9ba36b7626970b8, type: 3}
+  - {fileID: 21300000, guid: bfa35fec3e85dc8459a7613422d79199, type: 3}
   damagedSpritesLeft:
-  - {fileID: 21300000, guid: ea75c135e72970b4fafbe5a48f0e3b8a, type: 3}
-  - {fileID: 21300000, guid: 1c997bb7f3c04ae469c0fdf9d8d38c5a, type: 3}
-  - {fileID: 21300000, guid: 61b4d2bbc8ecd514bb7afaf444ff0009, type: 3}
-  - {fileID: 21300000, guid: 090214672632e3b41824e49670da6f02, type: 3}
+  - {fileID: 21300000, guid: 65c9cb71238b5b349994d75b5680a502, type: 3}
+  - {fileID: 21300000, guid: 0c5a212e3554ff94db1d4a4b56b7438c, type: 3}
+  - {fileID: 21300000, guid: 9475faffe6c6b494881f1c6b2fbe2c57, type: 3}
+  - {fileID: 21300000, guid: 47cfa2a75571bd0419b48b0861840754, type: 3}
   damagedSpritesRight:
-  - {fileID: 21300000, guid: 5c8d8cff66f290d459e665a20bff2db6, type: 3}
-  - {fileID: 21300000, guid: 48702207dd15c3b46b329f74e7f1f99b, type: 3}
-  - {fileID: 21300000, guid: f018a128bf0e30f429639f00e06243a8, type: 3}
-  - {fileID: 21300000, guid: 4f58ebbfb8d4fa4499e11fb7b9bc2c88, type: 3}
+  - {fileID: 21300000, guid: cfb6098fbbe3c494c8b601b646961dce, type: 3}
+  - {fileID: 21300000, guid: a8019373756541d4a80ceaad141698ef, type: 3}
+  - {fileID: 21300000, guid: 02e538980413d094e8b7238289ab19eb, type: 3}
+  - {fileID: 21300000, guid: bdea5025dbb157e448a334eefcf2addb, type: 3}
   damagedSpritesUp:
-  - {fileID: 21300000, guid: 3ff10959b342ce34ab95c6e145d09d24, type: 3}
-  - {fileID: 21300000, guid: 879572369ecc2a247af2352751ed5724, type: 3}
-  - {fileID: 21300000, guid: 28f59cca15ad1a440ac4a578ba878016, type: 3}
-  - {fileID: 21300000, guid: 8ba18a65e566c444a8195e3792960867, type: 3}
+  - {fileID: 21300000, guid: f6c0983fdcd279048aabfc428a73eaf3, type: 3}
+  - {fileID: 21300000, guid: 1a7e02b5936da524da489558671878e9, type: 3}
+  - {fileID: 21300000, guid: 7d577e6dee4464d4e8ecb10d4270084f, type: 3}
+  - {fileID: 21300000, guid: 0c8b140feddebdb408aae0a1209e1d96, type: 3}
