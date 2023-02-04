@@ -47,9 +47,11 @@ public class TipController : MonoBehaviour
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mouseDirection = new Vector2(mouseWorldPos.x, mouseWorldPos.y).normalized;
 
-            GameObject newBullet = Instantiate(bullet, mouseDirection, Quaternion.identity);
+            if (mouseDirection.y > 0.0f) {
+                GameObject newBullet = Instantiate(bullet, mouseDirection, Quaternion.identity);
 
-            newBullet.GetComponent<Rigidbody2D>().AddForce(mouseDirection * bulletSpeed);
+                newBullet.GetComponent<Rigidbody2D>().AddForce(mouseDirection * bulletSpeed);
+            }
         }
     }
 
