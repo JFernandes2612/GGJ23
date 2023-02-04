@@ -57,8 +57,10 @@ public class TipController : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = transform.position + direction * blockWidth;
-        transform.eulerAngles = rotation;
+        if (direction != Vector3.zero) {
+            transform.position = transform.position + direction * blockWidth;
+            transform.eulerAngles = rotation;
+        }
 
         Vector2Int position2DBox = new Vector2Int(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y));
 
