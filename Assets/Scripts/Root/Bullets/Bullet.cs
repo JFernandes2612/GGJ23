@@ -16,6 +16,14 @@ public class Bullet : MonoBehaviour
 
     }
 
+    void FixedUpdate() {
+        Renderer renderer = GetComponent<Renderer>();
+
+        if (!renderer.isVisible) {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy") {
