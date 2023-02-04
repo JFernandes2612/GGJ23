@@ -15,6 +15,6 @@ public class Dirt : Block
         lootTable.Add("H", 0.70f); // 10%
         lootTable.Add("N", 1.0f);  // 30%
 
-        lootAmount = 3;
+        lootAmount = 6;
     }
 }

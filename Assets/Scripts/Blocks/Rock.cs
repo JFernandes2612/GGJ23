@@ -7,12 +7,15 @@ public class Rock : Block
 {
     void Start()
     {
-        durability = 10;
+        durability = 25;
         lootTable = new Dictionary<string, float>();
 
-        lootTable.Add("C", 0.6f);   // 60%
-        lootTable.Add("Si", 0.9f);  // 30%
-        lootTable.Add("Fe", 1.0f);  // 10%
+        lootTable.Add("C", 0.4f);   // 40%
+        lootTable.Add("Si", 0.65f); // 25%
+        lootTable.Add("Fe", 0.8f);  // 15%
+        lootTable.Add("Au", 0.9f);  // 10%
+        lootTable.Add("Pt", 0.95f); // 5%
+        lootTable.Add("U", 1.0f);   // 5%
 
         lootAmount = 3;
     }
