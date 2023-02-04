@@ -38,12 +38,8 @@ public class TipController : MonoBehaviour
         prevPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         transform.position = transform.position + direction * blockWidth;
 
-        if (((int)transform.position.x) != ((int)prevPosition.x)) {
-            Instantiate(rootSegment, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(transform.eulerAngles));
-        }
-
-        if (((int)transform.position.y) != ((int)prevPosition.y)) {
-            Instantiate(rootSegment, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(transform.eulerAngles));
+        if ((int)transform.position.x != (int)prevPosition.x || (int)transform.position.y != (int)prevPosition.y) {
+            Instantiate(rootSegment, new Vector3((int)transform.position.x, (int)transform.position.y, 0.0f), Quaternion.Euler(transform.eulerAngles));
         }
 
         transform.eulerAngles = rotation;
