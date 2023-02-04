@@ -13,10 +13,12 @@ public class TipController : MonoBehaviour
     private Vector3 direction = new Vector3();
     private Vector3 rotation = new Vector3();
 
+    private float topHeight = -0.5f;
     private float blockWidth = 0.1f;
     private Rigidbody2D rb;
     public float knockbackStrength;
     public float knockbackDuration;
+    private Vector2 currentForce;
 
     private Stack<Vector2Int> moves = new Stack<Vector2Int>();
     private Stack<GameObject> instantiatedRootSegments = new Stack<GameObject>();
@@ -25,29 +27,54 @@ public class TipController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        currentForce = new Vector2(0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool atTop = transform.position.y >= -0.5;
+        bool atTop = transform.position.y >= topHeight;
 
-        float horizontalInput = atTop ? 0 : Input.GetAxisRaw("Horizontal");
+        if (atTop)
+            handleTop();
+        else
+            handleBot();
+    }
+
+    void handleBot()
+    {
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = 0.0f;
+
+        if (horizontalInput == 0.0f && verticalInput == 0.0f)
+        {
+
+        }
 
         if (horizontalInput == 0.0f)
         {
-            verticalInput = atTop ? (Input.GetAxisRaw("Vertical") == -1 ? -1 : 0) : Input.GetAxisRaw("Vertical");
+            verticalInput = Input.GetAxisRaw("Vertical");
         }
 
         direction = new Vector3(horizontalInput, verticalInput);
         rotation = new Vector3(0, 0, 90.0f * horizontalInput + (verticalInput != 1.0f ? 180.0f : 0.0f));
+    }
 
-        if (atTop && Input.GetButtonDown("Fire1")) {
+    void handleTop()
+    {
+        float horizontalInput = 0;
+        float verticalInput = Input.GetAxisRaw("Vertical") == -1 ? -1 : 0;
+
+        direction = new Vector3(horizontalInput, verticalInput);
+        rotation = new Vector3(0, 0, 90.0f * horizontalInput + (verticalInput != 1.0f ? 180.0f : 0.0f));
+
+        if (Input.GetButtonDown("Fire1"))
+        {
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mouseDirection = new Vector2(mouseWorldPos.x, mouseWorldPos.y).normalized;
 
-            if (mouseDirection.y > 0.0f) {
+            if (mouseDirection.y > 0.0f)
+            {
                 GameObject newBullet = Instantiate(bullet, mouseDirection, Quaternion.identity);
 
                 newBullet.GetComponent<Rigidbody2D>().AddForce(mouseDirection * bulletSpeed);
@@ -106,11 +133,23 @@ public class TipController : MonoBehaviour
             StartCoroutine(ApplyKnockback());
     }
 
+    private void setForce(Vector3 newForce)
+    {
+        currentForce = newForce;
+    }
+
+    private void removeForces()
+    {
+        rb.AddForce(-currentForce); //nullifies knockback
+        setForce(new Vector3(0, 0, 0));
+    }
+
     IEnumerator ApplyKnockback()
     {
         Vector3 knockbackForce = direction * -1 * knockbackStrength;
         rb.AddForce(knockbackForce);
+        setForce(knockbackForce);
         yield return new WaitForSeconds(knockbackDuration);
-        rb.AddForce(-knockbackForce); //nullifies knockback
+        removeForces();
     }
 }
