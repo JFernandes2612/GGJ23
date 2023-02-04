@@ -10,7 +10,11 @@ public class TipController : MonoBehaviour
     private Vector3 prevPosition = new Vector3();
     private Vector3 direction = new Vector3();
     private Vector3 rotation = new Vector3();
+
     private float blockWidth = 0.1f;
+    private Rigidbody2D rb;
+    public float knockbackStrength;
+    public float knockbackDuration;
 
     private Stack<Vector2Int> moves = new Stack<Vector2Int>();
     private Stack<GameObject> instantiatedRootSegments = new Stack<GameObject>();
@@ -18,7 +22,7 @@ public class TipController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -48,21 +52,39 @@ public class TipController : MonoBehaviour
         Vector3 positionCopy = new Vector3((int)transform.position.x, (int)transform.position.y, 0.0f);
         Quaternion rotationCopy = Quaternion.Euler(transform.eulerAngles);
 
-        if (prevPosition2DBox != position2DBox) {
-            if (moves.Count > 1) {
+        /*if (prevPosition2DBox != position2DBox)
+        {
+            if (moves.Count > 1)
+            {
                 Vector2Int holdValue = moves.Pop();
 
-                if (moves.Peek() == position2DBox) {
+                if (moves.Peek() == position2DBox)
+                {
                     moves.Pop();
                     Destroy(instantiatedRootSegments.Pop());
                     Destroy(instantiatedRootSegments.Pop());
-                } else {
+                }
+                else
+                {
                     moves.Push(holdValue);
                 }
             }
             moves.Push(position2DBox);
             GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, rotationCopy);
             instantiatedRootSegments.Push(instantiatedObject);
-        }
+        }*/
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Block")
+            StartCoroutine(ApplyKnockback());
+    }
+
+    IEnumerator ApplyKnockback()
+    {
+        Vector3 knockbackForce = direction * -1 * knockbackStrength;
+        rb.AddForce(knockbackForce);
+        yield return new WaitForSeconds(knockbackDuration);
+        rb.AddForce(-knockbackForce); //nullifies knockback
     }
 }
