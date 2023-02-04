@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 0.1f;
+    public float speed = 0.05f;
+
+    public int health = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -28,5 +30,13 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Block" || collision.gameObject.tag == "Player")
             Destroy(gameObject);
             // END GAME OR SOMETHING
+
+        if (collision.gameObject.tag == "Bullet") {
+            if (health > 0) {
+                health--;
+            } else if (health <= 0) {
+                Destroy(gameObject);
+            }
+        }
     }
 }

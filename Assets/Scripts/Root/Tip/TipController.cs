@@ -8,7 +8,7 @@ public class TipController : MonoBehaviour
     public GameObject rootSegment;
 
     public GameObject bullet;
-    public float bulletSpeed = 100.0f;
+    public float bulletSpeed = 1.4f;
 
     private Vector3 direction = new Vector3();
     private Vector3 rotation = new Vector3();
