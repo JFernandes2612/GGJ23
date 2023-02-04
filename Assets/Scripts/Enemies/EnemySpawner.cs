@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemy;
 
     public float spawnDelay = 5.0f;
+    public float speed = 0.3f;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator Spawn() {
         while (true) {
-            Instantiate(enemy, transform.position + Vector3.left * Random.Range(-10, 11), Quaternion.identity);
+            Instantiate(enemy, transform.position + Vector3.left * Random.Range(-10, 11) * speed, Quaternion.identity);
             yield return new WaitForSeconds(spawnDelay);
         }
     }

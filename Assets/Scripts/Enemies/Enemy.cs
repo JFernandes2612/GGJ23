@@ -27,5 +27,6 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Block")
             Destroy(gameObject);
+            // END GAME OR SOMETHING
     }
 }

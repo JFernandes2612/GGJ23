@@ -27,12 +27,12 @@ public class TipController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
+        float horizontalInput = transform.position.y >= -0.5 ? 0 : Input.GetAxisRaw("Horizontal");
         float verticalInput = 0.0f;
 
         if (horizontalInput == 0.0f)
         {
-            verticalInput = Input.GetAxisRaw("Vertical");
+            verticalInput = transform.position.y >= -0.5 ? (Input.GetAxisRaw("Vertical") == -1 ? -1 : 0) : Input.GetAxisRaw("Vertical");
         }
 
         direction = new Vector3(horizontalInput, verticalInput);
