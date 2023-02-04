@@ -5,7 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Block
+<<<<<<< HEAD
   - Root
+=======
+  - Bullet
+  - Enemy
+>>>>>>> main
   layers:
   - Default
   - TransparentFX

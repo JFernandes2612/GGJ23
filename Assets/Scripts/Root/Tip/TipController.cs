@@ -8,7 +8,7 @@ public class TipController : MonoBehaviour
     public GameObject rootSegment;
 
     public GameObject bullet;
-    public float bulletSpeed = 100.0f;
+    public float bulletSpeed = 1.4f;
 
     private Vector3 direction = new Vector3();
     private Vector3 rotation = new Vector3();
@@ -57,8 +57,10 @@ public class TipController : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = transform.position + direction * blockWidth;
-        transform.eulerAngles = rotation;
+        if (direction != Vector3.zero) {
+            transform.position = transform.position + direction * blockWidth;
+            transform.eulerAngles = rotation;
+        }
 
         Vector2Int position2DBox = new Vector2Int(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y));
 
