@@ -125,7 +125,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -147,22 +147,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagedSpritesDown:
-  - {fileID: 21300000, guid: 71833083729989549adc70ab433bad3e, type: 3}
-  - {fileID: 21300000, guid: 8a180b8a82b669a4e82e849e5a8c6b1f, type: 3}
-  - {fileID: 21300000, guid: 06afc1b5c2bb9704dbec8f9000474d4a, type: 3}
   - {fileID: 21300000, guid: 38f666e187f87bf40a062ee424922877, type: 3}
+  - {fileID: 21300000, guid: 06afc1b5c2bb9704dbec8f9000474d4a, type: 3}
+  - {fileID: 21300000, guid: 8a180b8a82b669a4e82e849e5a8c6b1f, type: 3}
+  - {fileID: 21300000, guid: 71833083729989549adc70ab433bad3e, type: 3}
   damagedSpritesLeft:
-  - {fileID: 21300000, guid: ea75c135e72970b4fafbe5a48f0e3b8a, type: 3}
-  - {fileID: 21300000, guid: 1c997bb7f3c04ae469c0fdf9d8d38c5a, type: 3}
-  - {fileID: 21300000, guid: 61b4d2bbc8ecd514bb7afaf444ff0009, type: 3}
   - {fileID: 21300000, guid: 090214672632e3b41824e49670da6f02, type: 3}
+  - {fileID: 21300000, guid: 61b4d2bbc8ecd514bb7afaf444ff0009, type: 3}
+  - {fileID: 21300000, guid: 1c997bb7f3c04ae469c0fdf9d8d38c5a, type: 3}
+  - {fileID: 21300000, guid: ea75c135e72970b4fafbe5a48f0e3b8a, type: 3}
   damagedSpritesRight:
-  - {fileID: 21300000, guid: 5c8d8cff66f290d459e665a20bff2db6, type: 3}
-  - {fileID: 21300000, guid: 48702207dd15c3b46b329f74e7f1f99b, type: 3}
-  - {fileID: 21300000, guid: f018a128bf0e30f429639f00e06243a8, type: 3}
   - {fileID: 21300000, guid: 4f58ebbfb8d4fa4499e11fb7b9bc2c88, type: 3}
+  - {fileID: 21300000, guid: f018a128bf0e30f429639f00e06243a8, type: 3}
+  - {fileID: 21300000, guid: 48702207dd15c3b46b329f74e7f1f99b, type: 3}
+  - {fileID: 21300000, guid: 5c8d8cff66f290d459e665a20bff2db6, type: 3}
   damagedSpritesUp:
-  - {fileID: 21300000, guid: 3ff10959b342ce34ab95c6e145d09d24, type: 3}
-  - {fileID: 21300000, guid: 879572369ecc2a247af2352751ed5724, type: 3}
-  - {fileID: 21300000, guid: 28f59cca15ad1a440ac4a578ba878016, type: 3}
   - {fileID: 21300000, guid: 8ba18a65e566c444a8195e3792960867, type: 3}
+  - {fileID: 21300000, guid: 28f59cca15ad1a440ac4a578ba878016, type: 3}
+  - {fileID: 21300000, guid: 879572369ecc2a247af2352751ed5724, type: 3}
+  - {fileID: 21300000, guid: 3ff10959b342ce34ab95c6e145d09d24, type: 3}

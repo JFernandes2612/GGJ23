@@ -121,25 +121,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagedSpritesDown:
-  - {fileID: 21300000, guid: 10d80d7776bcde240aa79052caa8c80a, type: 3}
-  - {fileID: 21300000, guid: 2a6921ad254d5a346a5678fdba742fe6, type: 3}
-  - {fileID: 21300000, guid: 29970e8e6a353f842932730e92ee1baa, type: 3}
   - {fileID: 21300000, guid: e6c5d1a0a47adb34593adf35c41f2a8c, type: 3}
+  - {fileID: 21300000, guid: 29970e8e6a353f842932730e92ee1baa, type: 3}
+  - {fileID: 21300000, guid: 2a6921ad254d5a346a5678fdba742fe6, type: 3}
+  - {fileID: 21300000, guid: 10d80d7776bcde240aa79052caa8c80a, type: 3}
   damagedSpritesLeft:
-  - {fileID: 21300000, guid: 5f85a9cf6636f414e82964d3ef0a80dd, type: 3}
-  - {fileID: 21300000, guid: 2c5ed6ccd363955439b72fe0581ca9d5, type: 3}
-  - {fileID: 21300000, guid: aaef866d3aa928041b951999775698f3, type: 3}
   - {fileID: 21300000, guid: 1138dfeb9730bf84795f8e36e2ccdbd8, type: 3}
+  - {fileID: 21300000, guid: aaef866d3aa928041b951999775698f3, type: 3}
+  - {fileID: 21300000, guid: 2c5ed6ccd363955439b72fe0581ca9d5, type: 3}
+  - {fileID: 21300000, guid: 5f85a9cf6636f414e82964d3ef0a80dd, type: 3}
   damagedSpritesRight:
-  - {fileID: 21300000, guid: 65a05f332d2fe5948b82e5ea327a4149, type: 3}
-  - {fileID: 21300000, guid: 808e20089df98224a83fd4dffd66643e, type: 3}
-  - {fileID: 21300000, guid: 150a8359d7d576d428e36a04b33ca3b8, type: 3}
   - {fileID: 21300000, guid: 0e0f921b7274e4045921986dba3215f1, type: 3}
+  - {fileID: 21300000, guid: 150a8359d7d576d428e36a04b33ca3b8, type: 3}
+  - {fileID: 21300000, guid: 808e20089df98224a83fd4dffd66643e, type: 3}
+  - {fileID: 21300000, guid: 65a05f332d2fe5948b82e5ea327a4149, type: 3}
   damagedSpritesUp:
-  - {fileID: 21300000, guid: e7257fcb74747804a8c3be098959fe0a, type: 3}
-  - {fileID: 21300000, guid: 4bfdaf39ecf4502409180d4a42044424, type: 3}
-  - {fileID: 21300000, guid: 5941598657d551d4fa0a68be69db8c2c, type: 3}
   - {fileID: 21300000, guid: 923f13781ef67774c8f06642c572bc6d, type: 3}
+  - {fileID: 21300000, guid: 5941598657d551d4fa0a68be69db8c2c, type: 3}
+  - {fileID: 21300000, guid: 4bfdaf39ecf4502409180d4a42044424, type: 3}
+  - {fileID: 21300000, guid: e7257fcb74747804a8c3be098959fe0a, type: 3}
 --- !u!61 &528075311513602518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 1.28}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
