@@ -52,7 +52,7 @@ public class TipController : MonoBehaviour
         Vector3 positionCopy = new Vector3((int)transform.position.x, (int)transform.position.y, 0.0f);
         Quaternion rotationCopy = Quaternion.Euler(transform.eulerAngles);
 
-        /*if (prevPosition2DBox != position2DBox)
+        if (prevPosition2DBox != position2DBox)
         {
             if (moves.Count > 1)
             {
@@ -72,7 +72,7 @@ public class TipController : MonoBehaviour
             moves.Push(position2DBox);
             GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, rotationCopy);
             instantiatedRootSegments.Push(instantiatedObject);
-        }*/
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
