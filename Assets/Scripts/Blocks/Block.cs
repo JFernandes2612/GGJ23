@@ -33,21 +33,21 @@ public class Block : MonoBehaviour
             {
                 durability--;
                 spriteRenderer.sprite = damagedSprites[durability / durabilityFactor];
-            }
-        } else if (durability <= 0) {
-            Destroy(gameObject);
+            } else if (durability <= 0) {
+                Destroy(gameObject);
 
-            for (int i = 0; i < lootAmount; i++)
-            {
-                float drop = Random.Range(0.0f, 1.0f);
-
-                foreach (KeyValuePair<string, float> entry in lootTable)
+                for (int i = 0; i < lootAmount; i++)
                 {
-                    if (drop < entry.Value)
+                    float drop = Random.Range(0.0f, 1.0f);
+
+                    foreach (KeyValuePair<string, float> entry in lootTable)
                     {
-                        // Change to actual drop behaviour
-                        Debug.Log("Dropped item #" + (i + 1) + ": " + entry.Key);
-                        break;
+                        if (drop < entry.Value)
+                        {
+                            // Change to actual drop behaviour
+                            Debug.Log("Dropped item #" + (i + 1) + ": " + entry.Key);
+                            break;
+                        }
                     }
                 }
             }
