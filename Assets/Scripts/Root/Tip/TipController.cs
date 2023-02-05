@@ -17,10 +17,6 @@ public class TipController : MonoBehaviour
     private float topHeight = -0.5f;
     private float speed = 0.1f;
     private Rigidbody2D rb;
-    public float knockbackStrength;
-    public float knockbackDuration;
-
-    int count = 0;
 
     private Stack<Vector2Int> moves = new Stack<Vector2Int>();
     private Stack<GameObject> instantiatedRootSegments = new Stack<GameObject>();
@@ -113,31 +109,6 @@ public class TipController : MonoBehaviour
             instantiatedObject.transform.parent = rootEmpty.transform;
             instantiatedRootSegments.Push(instantiatedObject);
         }
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Block")
-        {
-            Debug.Log("Colliding " + count);
-            count++;
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Block")
-        {
-            Debug.Log("Entered " + count);
-            count++;
-        }
-    }
-
-    IEnumerator ApplyKnockback()
-    {
-        Vector3 knockbackForce = direction * -1 * knockbackStrength;
-        rb.AddForce(knockbackForce);
-        yield return new WaitForSeconds(knockbackDuration);
-        rb.AddForce(-knockbackForce); //nullifies knockback
     }
 
     public void upgrade() {
