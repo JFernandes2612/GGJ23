@@ -18,13 +18,19 @@ public class TipController : MonoBehaviour
     private float speed = 0.1f;
     private Rigidbody2D rb;
 
+    private Inventory inventory;
+
     private Stack<Vector2Int> moves = new Stack<Vector2Int>();
     private Stack<GameObject> instantiatedRootSegments = new Stack<GameObject>();
+
+    private bool canCollide = true;
+    public float collisionCooldown = 1.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        inventory = GetComponent<Inventory>();
     }
 
     // Update is called once per frame
@@ -118,5 +124,26 @@ public class TipController : MonoBehaviour
     public override string ToString()
     {
         return "Speed: " + speed;
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Block")
+        {
+            if (canCollide)
+            {
+                canCollide = false;
+                Vector2 collisionDirection = collision.transform.position - transform.position;
+                Block blockScript = collision.gameObject.GetComponent<Block>();
+                blockScript.Collide(collisionDirection, inventory);
+                StartCoroutine(collideCooldown());
+            }
+        }
+    }
+
+    IEnumerator collideCooldown()
+    {
+        yield return new WaitForSeconds(collisionCooldown);
+        canCollide = true;
     }
 }
