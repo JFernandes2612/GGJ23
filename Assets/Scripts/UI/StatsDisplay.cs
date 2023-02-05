@@ -19,6 +19,6 @@ public class StatsDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textMesh.text = "Wave: " + EnemySpawner.wave + '\n' + player.ToString() + "\nDamage: " + Bullet.getDamage() + "\nMining Speed: " + Block.miningCooldown;
+        textMesh.text = "Wave: " + EnemySpawner.wave + "\n\n" + player.ToString() + "\nDamage: " + Bullet.getDamage() + "\nMining Speed: " + 1/Block.miningCooldown;
     }
 }
