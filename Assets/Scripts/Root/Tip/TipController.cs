@@ -52,9 +52,14 @@ public class TipController : MonoBehaviour
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mouseDirection = new Vector2(mouseWorldPos.x, mouseWorldPos.y).normalized;
 
+            float angle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
+            Debug.Log(angle - 90);
+
+
             if (mouseDirection.y > 0.0f)
             {
-                GameObject newBullet = Instantiate(bullet, mouseDirection, Quaternion.identity);
+                Vector3 projRotation = (mouseWorldPos - this.transform.position).normalized;
+                GameObject newBullet = Instantiate(bullet, mouseDirection, Quaternion.Euler(0.0f, 0.0f, angle - 90));
 
                 newBullet.GetComponent<Rigidbody2D>().AddForce(mouseDirection * bulletSpeed);
             }

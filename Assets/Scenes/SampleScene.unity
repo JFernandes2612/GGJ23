@@ -1030,9 +1030,17 @@ PrefabInstance:
       value: rootTip
       objectReference: {fileID: 0}
     - target: {fileID: 6668188053410698906, guid: 3ca5ec00b27c80040bf494d8ffc6d844, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 7164017702986746191, guid: 4299e683b31effc4ba7581bb79de0a69, type: 3}
+    - target: {fileID: 6668188053410698906, guid: 3ca5ec00b27c80040bf494d8ffc6d844, type: 3}
       propertyPath: rootEmpty
       value: 
       objectReference: {fileID: 1418313138}
+    - target: {fileID: 6668188053410698906, guid: 3ca5ec00b27c80040bf494d8ffc6d844, type: 3}
+      propertyPath: bulletSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6668188053410698906, guid: 3ca5ec00b27c80040bf494d8ffc6d844, type: 3}
       propertyPath: corners.Array.size
       value: 4
