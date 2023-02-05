@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TipController : MonoBehaviour
 {
-
     public GameObject rootSegment;
+    public GameObject rootEmpty;
 
     public GameObject bullet;
     public float bulletSpeed = 1.4f;
@@ -32,6 +32,10 @@ public class TipController : MonoBehaviour
     void Update()
     {
         bool atTop = transform.position.y >= topHeight;
+        if (atTop)
+            rootEmpty.transform.localScale = Vector3.zero;
+        else
+            rootEmpty.transform.localScale = Vector3.one;
 
         float horizontalInput = atTop ? 0 : Input.GetAxisRaw("Horizontal");
         float verticalInput = 0.0f;
@@ -86,11 +90,13 @@ public class TipController : MonoBehaviour
                 moves.Push(position2DBox);
                 GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
                 instantiatedObject.transform.eulerAngles = rotation;
+                instantiatedObject.transform.parent = rootEmpty.transform;
                 instantiatedRootSegments.Push(instantiatedObject);
             } else if (moves.Peek() != position2DBox) {
                 moves.Push(position2DBox);
                 GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
                 instantiatedObject.transform.eulerAngles = rotation;
+                instantiatedObject.transform.parent = rootEmpty.transform;
                 instantiatedRootSegments.Push(instantiatedObject);
             }
 
@@ -98,6 +104,7 @@ public class TipController : MonoBehaviour
             moves.Push(position2DBox);
             GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
             instantiatedObject.transform.eulerAngles = rotation;
+            instantiatedObject.transform.parent = rootEmpty.transform;
             instantiatedRootSegments.Push(instantiatedObject);
         }
 
