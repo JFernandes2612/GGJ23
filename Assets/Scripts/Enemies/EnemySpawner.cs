@@ -39,9 +39,9 @@ public class EnemySpawner : MonoBehaviour
         while (true) {
             yield return StartCoroutine(WarningLight());
 
-            for (int i = 0; i < baseNumberOfEnemies * ((wave - 1) * 2); i++) {
+            for (int i = 0; i < baseNumberOfEnemies * wave; i++) {
                 GameObject newEnemy = Instantiate(enemy, transform.position + Vector3.left * Random.Range(-10, 11), Quaternion.identity);
-                newEnemy.GetComponent<Enemy>().addStats(1 + wave * 0.1f, 1 + wave * 0.2f);
+                newEnemy.GetComponent<Enemy>().addStats(1 + (wave - 1) * 0.05f, 1 + (wave - 1) * 0.1f);
                 yield return new WaitForSeconds(baseSpawnDelay / wave);
             }
 

@@ -775,6 +775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surfacePrefab: {fileID: 4602961837155957677, guid: 6d1836f6d6be13d4da8d5c1446ac4f55, type: 3}
+  bedrockPrefab: {fileID: 6069184230342055419, guid: 63126b19fa0b05b4482bd5bfa9f2b973, type: 3}
   blockPrefabs:
   - {fileID: 528075311513602513, guid: d0a0314fbc0508049bb9f08bd5e18252, type: 3}
   - {fileID: 6069184230342055419, guid: 596ec710202b06b45b26572a30ba15c7, type: 3}

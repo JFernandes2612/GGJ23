@@ -14,7 +14,8 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        speed = baseSpeed;
+        health = baseHealth;
     }
 
     // Update is called once per frame
