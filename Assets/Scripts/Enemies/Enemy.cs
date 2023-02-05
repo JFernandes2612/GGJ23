@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -43,8 +44,10 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag != "Bullet")
+        {
             Destroy(gameObject);
-            // END GAME OR SOMETHING
+            SceneManager.LoadScene("GameOver");
+        }
 
         if (collision.gameObject.tag == "Bullet") {
             if (health > 0) {
