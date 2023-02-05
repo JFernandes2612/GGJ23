@@ -6,8 +6,8 @@ public class TipController : MonoBehaviour
 {
     public GameObject rootSegment;
     public GameObject rootEmpty;
-    public GameObject rootFlower;
 
+    public GameObject bulletsEmpty;
     public GameObject bullet;
     public float bulletSpeed = 1.4f;
 
@@ -59,7 +59,7 @@ public class TipController : MonoBehaviour
             {
                 Vector3 projRotation = (mouseWorldPos - this.transform.position).normalized;
                 GameObject newBullet = Instantiate(bullet, mouseDirection, Quaternion.Euler(0.0f, 0.0f, angle - 90));
-                newBullet.transform.parent = rootFlower.transform;
+                newBullet.transform.parent = bulletsEmpty.transform;
                 newBullet.GetComponent<Rigidbody2D>().AddForce(mouseDirection * bulletSpeed);
             }
         }
