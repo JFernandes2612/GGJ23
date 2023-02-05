@@ -25,7 +25,7 @@ public class Block : MonoBehaviour
             Vector2 collisionDirection = transform.position - collision.transform.position;
             if(Mathf.Abs(collisionDirection.x) > Mathf.Abs(collisionDirection.y)) //hitting horizontally
             {
-                spritesArray = (collisionDirection.x < 0) ? damagedSpritesRight : damagedSpritesLeft;
+                spritesArray = (collisionDirection.x < 0) ? damagedSpritesLeft : damagedSpritesRight;
             }
             else //hitting vertically
             {
