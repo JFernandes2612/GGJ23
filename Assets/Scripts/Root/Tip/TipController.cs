@@ -6,6 +6,7 @@ public class TipController : MonoBehaviour
 {
     public GameObject rootSegment;
     public GameObject rootEmpty;
+    public GameObject rootFlower;
 
     public GameObject bullet;
     public float bulletSpeed = 1.4f;
@@ -60,7 +61,7 @@ public class TipController : MonoBehaviour
             {
                 Vector3 projRotation = (mouseWorldPos - this.transform.position).normalized;
                 GameObject newBullet = Instantiate(bullet, mouseDirection, Quaternion.Euler(0.0f, 0.0f, angle - 90));
-
+                newBullet.transform.parent = rootFlower.transform;
                 newBullet.GetComponent<Rigidbody2D>().AddForce(mouseDirection * bulletSpeed);
             }
         }
@@ -76,7 +77,6 @@ public class TipController : MonoBehaviour
         Vector2Int position2DBox = new Vector2Int(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y));
 
         Vector3 positionCopy = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0.0f);
-
         if (moves.Count >= 1)
         {
             if (moves.Count >= 2) {
@@ -112,7 +112,6 @@ public class TipController : MonoBehaviour
             instantiatedObject.transform.parent = rootEmpty.transform;
             instantiatedRootSegments.Push(instantiatedObject);
         }
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
