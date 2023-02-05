@@ -15,7 +15,7 @@ public class TipController : MonoBehaviour
     private Vector3 rotation = new Vector3();
 
     private float topHeight = -0.5f;
-    private float speed = 0.1f;
+    private static float speed = 0.1f;
     private Rigidbody2D rb;
 
     private Stack<Vector2Int> moves = new Stack<Vector2Int>();
@@ -115,12 +115,12 @@ public class TipController : MonoBehaviour
         }
     }
 
-    public void upgrade() {
-        speed += 0.05f;
+    public static void upgrade() {
+        speed += 0.005f;
     }
 
     public override string ToString()
     {
-        return "Speed: " + speed;
+        return "Speed: " + (speed*100).ToString("#.#");
     }
 }

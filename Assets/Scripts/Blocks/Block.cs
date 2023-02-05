@@ -69,4 +69,8 @@ public class Block : MonoBehaviour
         yield return new WaitForSeconds(miningCooldown);
         canLoseDurability = true;
     }
+
+    public static void upgrade() {
+        miningCooldown -= 0.005f;
+    }
 }
