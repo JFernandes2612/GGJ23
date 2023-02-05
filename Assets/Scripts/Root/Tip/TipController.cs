@@ -14,7 +14,7 @@ public class TipController : MonoBehaviour
     private Vector3 rotation = new Vector3();
 
     private float topHeight = -0.5f;
-    private float blockWidth = 0.1f;
+    private float speed = 0.1f;
     private Rigidbody2D rb;
     public float knockbackStrength;
     public float knockbackDuration;
@@ -69,7 +69,7 @@ public class TipController : MonoBehaviour
     void FixedUpdate()
     {
         if (direction != Vector3.zero) {
-            transform.position = transform.position + direction * blockWidth;
+            transform.position = transform.position + direction * speed;
             transform.eulerAngles = rotation;
         }
 

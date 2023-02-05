@@ -554,8 +554,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -302.33, y: 280.16}
-  m_SizeDelta: {x: 604.68, y: 66.18}
+  m_AnchoredPosition: {x: -316.87, y: 256.22}
+  m_SizeDelta: {x: 633.74, y: 80.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1137939932
 MonoBehaviour:
@@ -898,9 +898,9 @@ MonoBehaviour:
   enemy: {fileID: 3196345635409661101, guid: dd993e03ca15cf545937780a8be5ad5d, type: 3}
   warningLight: {fileID: 2060654622}
   waveDelay: 90
-  spawnDelay: 5
+  baseSpawnDelay: 5
   initialDelay: 2
-  numberOfEnemies: 5
+  baseNumberOfEnemies: 5
 --- !u!4 &1932440267
 Transform:
   m_ObjectHideFlags: 0
