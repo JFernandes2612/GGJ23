@@ -68,7 +68,7 @@ public class Upgrade : MonoBehaviour
 
     public void upgradeSpeed() {
         if (updateInventory()) {
-            TipController.upgrade();
+            TipController.upgradeSpeed();
             upgraded();
         }
     }
@@ -82,7 +82,7 @@ public class Upgrade : MonoBehaviour
 
     public void upgradeMining() {
         if (updateInventory()) {
-            Block.upgrade();
+            TipController.upgradeCollisionCooldown();
             upgraded();
         }
     }
