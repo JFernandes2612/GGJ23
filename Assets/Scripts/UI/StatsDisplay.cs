@@ -20,6 +20,6 @@ public class StatsDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textMesh.text = player.ToString();
+        textMesh.text = player.ToString() + '\n' + "Damage: " + Bullet.getDamage();
     }
 }
