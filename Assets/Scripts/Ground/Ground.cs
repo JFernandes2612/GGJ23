@@ -42,7 +42,7 @@ public class Ground : MonoBehaviour
                     }
                 }
                 Vector3 blockPos = transform.position + new Vector3(x, y);
-                GameObject newBlock = Instantiate(blockPrefab, blockPos, Quaternion.Euler(new Vector3(0, 0, 0)));
+                GameObject newBlock = Instantiate(blockPrefab, blockPos, Quaternion.identity);
                 newBlock.transform.parent = gameObject.transform;
                 blocks[i, j] = newBlock;
                 x += blockOffset;
