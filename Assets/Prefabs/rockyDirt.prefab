@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90224b7e29132eb4bbd6ba1b51942bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 9091176732999551956, guid: 3ca5ec00b27c80040bf494d8ffc6d844, type: 3}
   damagedSpritesDown:
   - {fileID: 21300000, guid: 38f666e187f87bf40a062ee424922877, type: 3}
   - {fileID: 21300000, guid: 06afc1b5c2bb9704dbec8f9000474d4a, type: 3}

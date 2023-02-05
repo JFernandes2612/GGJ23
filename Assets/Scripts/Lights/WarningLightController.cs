@@ -5,11 +5,11 @@ using UnityEngine;
 public class WarningLightController : MonoBehaviour
 {
     public GameObject player;
-    // Start is called before the first frame update
 
     private float baseY;
     private float baseYScale;
 
+    // Start is called before the first frame update
     void Start()
     {
         baseY = transform.position.y;

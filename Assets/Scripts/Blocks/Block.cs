@@ -18,6 +18,7 @@ public class Block : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     void Update()
@@ -55,8 +56,8 @@ public class Block : MonoBehaviour
                     {
                         if (drop < entry.Value)
                         {
-                            // Change to actual drop behaviour
-                            Debug.Log("Dropped item #" + (i + 1) + ": " + entry.Key);
+                            Inventory inventory = collision.gameObject.GetComponent<Inventory>();
+                            inventory.putItem(entry.Key);
                             break;
                         }
                     }
