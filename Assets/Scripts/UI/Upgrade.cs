@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Upgrade : MonoBehaviour
 {
+    public GameObject inventoryObject;
+
+    private Inventory inventory;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        inventory = inventoryObject.GetComponent<Inventory>();
     }
 
     // Update is called once per frame

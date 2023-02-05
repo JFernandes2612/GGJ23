@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 210640028}
   - component: {fileID: 210640031}
   m_Layer: 0
-  m_Name: Button (2)
+  m_Name: upgradeMiningSpeedButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -380,6 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de8d4aef67dcbf43827929832c366dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryObject: {fileID: 1874246385}
 --- !u!1 &270820657
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +746,7 @@ GameObject:
   - component: {fileID: 521196738}
   - component: {fileID: 521196741}
   m_Layer: 0
-  m_Name: Button (1)
+  m_Name: upgradeDamageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -878,6 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de8d4aef67dcbf43827929832c366dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryObject: {fileID: 1874246385}
 --- !u!1001 &667569926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1384,7 +1386,7 @@ GameObject:
   - component: {fileID: 1345885231}
   - component: {fileID: 1345885234}
   m_Layer: 0
-  m_Name: Button
+  m_Name: upgradeSpeedButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1517,6 +1519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de8d4aef67dcbf43827929832c366dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryObject: {fileID: 1874246385}
 --- !u!1 &1418313138
 GameObject:
   m_ObjectHideFlags: 0
