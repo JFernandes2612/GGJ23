@@ -15,7 +15,7 @@ public class TipController : MonoBehaviour
     private Vector3 rotation = new Vector3();
 
     private float topHeight = -0.5f;
-    private float speed = 0.1f;
+    private static float speed = 0.1f;
     private Rigidbody2D rb;
 
     private Inventory inventory;
@@ -24,7 +24,7 @@ public class TipController : MonoBehaviour
     private Stack<GameObject> instantiatedRootSegments = new Stack<GameObject>();
 
     private bool canCollide = true;
-    public float collisionCooldown = 1.0f;
+    public static float collisionCooldown = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -97,6 +97,9 @@ public class TipController : MonoBehaviour
 
                 moves.Push(position2DBox);
                 GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
+                if (moves.Count == 1) {
+                    instantiatedObject.SetActive(false);
+                }
                 instantiatedObject.transform.eulerAngles = rotation;
                 instantiatedObject.transform.parent = rootEmpty.transform;
                 instantiatedRootSegments.Push(instantiatedObject);
@@ -111,19 +114,25 @@ public class TipController : MonoBehaviour
         } else {
             moves.Push(position2DBox);
             GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
+            instantiatedObject.SetActive(false);
             instantiatedObject.transform.eulerAngles = rotation;
             instantiatedObject.transform.parent = rootEmpty.transform;
             instantiatedRootSegments.Push(instantiatedObject);
         }
     }
 
-    public void upgrade() {
-        speed += 0.05f;
+    public static void upgradeSpeed() {
+        speed += 0.005f;
+    }
+
+    public static void upgradeCollisionCooldown()
+    {
+        collisionCooldown -= 0.005f;
     }
 
     public override string ToString()
     {
-        return "Speed: " + speed;
+        return "Speed: " + (speed*100).ToString("#.#") + "\nMining Speed: " + (1 / collisionCooldown).ToString("#.##");
     }
 
     private void OnCollisionStay2D(Collision2D collision)

@@ -19,7 +19,7 @@ public class WarningLightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(0.0f, baseY + player.transform.position.y, transform.position.z);
-        transform.localScale = new Vector3(transform.localScale.x, baseYScale - player.transform.position.y,transform.localScale.z);
+        transform.position = new Vector3(0.0f, baseY + player.transform.position.y / 2, transform.position.z);
+        transform.localScale = new Vector3(transform.localScale.x, baseYScale - player.transform.position.y, transform.localScale.z);
     }
 }

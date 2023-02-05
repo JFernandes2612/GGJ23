@@ -10,6 +10,15 @@ public class Inventory : MonoBehaviour
         items[s]++;
     }
 
+    public bool removeItem(string s, int quantity) {
+        if (items[s] >= quantity) {
+            items[s] -= quantity;
+            return true;
+        }
+
+        return false;
+    }
+
     override public string ToString() {
         string s = "";
 

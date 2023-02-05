@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
 
     public int baseNumberOfEnemies = 5;
 
-    private int wave = 1;
+    public static int wave = 1;
 
     private float warningLightFrameRate = 1000.0f;
     private float warningLightAnimationSpeed = 20.0f;
@@ -45,6 +45,7 @@ public class EnemySpawner : MonoBehaviour
                 yield return new WaitForSeconds(baseSpawnDelay / wave);
             }
 
+            wave++;
             yield return new WaitForSeconds(waveDelay);
         }
     }
