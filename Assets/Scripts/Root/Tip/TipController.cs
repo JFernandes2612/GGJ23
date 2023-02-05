@@ -127,4 +127,9 @@ public class TipController : MonoBehaviour
         yield return new WaitForSeconds(knockbackDuration);
         rb.AddForce(-knockbackForce); //nullifies knockback
     }
+
+    public override string ToString()
+    {
+        return "Speed: " + speed;
+    }
 }

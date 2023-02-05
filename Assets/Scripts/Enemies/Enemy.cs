@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 0.05f;
+    private float baseSpeed = 0.05f;
 
-    public int health = 5;
+    private int baseHealth = 5;
+
+    private float speed;
+    private int health;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,11 @@ public class Enemy : MonoBehaviour
         transform.position += -transform.position.normalized * speed;
     }
 
+    public void addStats(float speedFactor, float healthFactor) {
+        speed = baseSpeed * speedFactor;
+        health = (int)(baseHealth * healthFactor);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Block" || collision.gameObject.tag == "Player")
@@ -33,7 +41,7 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.tag == "Bullet") {
             if (health > 0) {
-                health--;
+                health -= Bullet.getDamage();
             } else if (health <= 0) {
                 Destroy(gameObject);
             }
