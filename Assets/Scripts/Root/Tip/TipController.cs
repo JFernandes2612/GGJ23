@@ -7,6 +7,7 @@ public class TipController : MonoBehaviour
     public GameObject rootSegment;
     public GameObject rootEmpty;
 
+    public GameObject bulletsEmpty;
     public GameObject bullet;
     public float bulletSpeed = 1.4f;
 
@@ -18,6 +19,8 @@ public class TipController : MonoBehaviour
     private Rigidbody2D rb;
     public float knockbackStrength;
     public float knockbackDuration;
+
+    int count = 0;
 
     private Stack<Vector2Int> moves = new Stack<Vector2Int>();
     private Stack<GameObject> instantiatedRootSegments = new Stack<GameObject>();
@@ -53,14 +56,12 @@ public class TipController : MonoBehaviour
             Vector2 mouseDirection = new Vector2(mouseWorldPos.x, mouseWorldPos.y).normalized;
 
             float angle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
-            Debug.Log(angle - 90);
-
 
             if (mouseDirection.y > 0.0f)
             {
                 Vector3 projRotation = (mouseWorldPos - this.transform.position).normalized;
                 GameObject newBullet = Instantiate(bullet, mouseDirection, Quaternion.Euler(0.0f, 0.0f, angle - 90));
-
+                newBullet.transform.parent = bulletsEmpty.transform;
                 newBullet.GetComponent<Rigidbody2D>().AddForce(mouseDirection * bulletSpeed);
             }
         }
@@ -112,12 +113,23 @@ public class TipController : MonoBehaviour
             instantiatedObject.transform.parent = rootEmpty.transform;
             instantiatedRootSegments.Push(instantiatedObject);
         }
+    }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Block")
+        {
+            Debug.Log("Colliding " + count);
+            count++;
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Block")
-            StartCoroutine(ApplyKnockback());
+        {
+            Debug.Log("Entered " + count);
+            count++;
+        }
     }
 
     IEnumerator ApplyKnockback()

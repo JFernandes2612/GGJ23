@@ -1203,6 +1203,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1418313138}
     - target: {fileID: 6668188053410698906, guid: 3ca5ec00b27c80040bf494d8ffc6d844, type: 3}
+      propertyPath: rootFlower
+      value: 
+      objectReference: {fileID: 1478469548}
+    - target: {fileID: 6668188053410698906, guid: 3ca5ec00b27c80040bf494d8ffc6d844, type: 3}
       propertyPath: bulletSpeed
       value: 4
       objectReference: {fileID: 0}
