@@ -91,6 +91,9 @@ public class TipController : MonoBehaviour
 
                 moves.Push(position2DBox);
                 GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
+                if (moves.Count == 1) {
+                    instantiatedObject.SetActive(false);
+                }
                 instantiatedObject.transform.eulerAngles = rotation;
                 instantiatedObject.transform.parent = rootEmpty.transform;
                 instantiatedRootSegments.Push(instantiatedObject);
@@ -105,6 +108,7 @@ public class TipController : MonoBehaviour
         } else {
             moves.Push(position2DBox);
             GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
+            instantiatedObject.SetActive(false);
             instantiatedObject.transform.eulerAngles = rotation;
             instantiatedObject.transform.parent = rootEmpty.transform;
             instantiatedRootSegments.Push(instantiatedObject);
