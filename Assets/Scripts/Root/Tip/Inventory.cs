@@ -10,8 +10,16 @@ public class Inventory : MonoBehaviour
         items[s]++;
     }
 
+    public bool canRemoveItem(string s, int quantity) {
+         if (items[s] >= quantity) {
+            return true;
+        }
+
+        return false;
+    }
+
     public bool removeItem(string s, int quantity) {
-        if (items[s] >= quantity) {
+        if (canRemoveItem(s, quantity)) {
             items[s] -= quantity;
             return true;
         }
