@@ -6,7 +6,7 @@ public class Ground : MonoBehaviour
 {
     float groundBaseHeight = 0f;
     int groundWidth = 23;
-    int groundHeight = 10;
+    int groundHeight = 1000;
     GameObject[,] blocks;
     [SerializeField]
     private GameObject surfacePrefab;

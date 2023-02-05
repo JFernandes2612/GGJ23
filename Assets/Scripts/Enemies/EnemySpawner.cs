@@ -10,11 +10,13 @@ public class EnemySpawner : MonoBehaviour
 
     public float waveDelay = 90.0f;
 
-    public float spawnDelay = 5.0f;
+    public float baseSpawnDelay = 5.0f;
 
     public float initialDelay = 2.0f;
 
-    public int numberOfEnemies = 5;
+    public int baseNumberOfEnemies = 5;
+
+    private int wave = 1;
 
     private float warningLightFrameRate = 1000.0f;
     private float warningLightAnimationSpeed = 20.0f;
@@ -37,9 +39,9 @@ public class EnemySpawner : MonoBehaviour
         while (true) {
             yield return StartCoroutine(WarningLight());
 
-            for (int i = 0; i < numberOfEnemies; i++) {
+            for (int i = 0; i < baseNumberOfEnemies * ((wave - 1) * 2); i++) {
                 Instantiate(enemy, transform.position + Vector3.left * Random.Range(-10, 11), Quaternion.identity);
-                yield return new WaitForSeconds(spawnDelay);
+                yield return new WaitForSeconds(baseSpawnDelay / wave);
             }
 
             yield return new WaitForSeconds(waveDelay);
