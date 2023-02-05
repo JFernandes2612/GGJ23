@@ -7,6 +7,8 @@ public class Block : MonoBehaviour
     protected int durability;
     protected int durabilityFactor;
     protected int baseDurability = 4;
+    private bool canLoseDurability = true;
+    public float miningCooldown = 0.5f;
 
     protected Dictionary<string, float> lootTable;
     protected int lootAmount;
@@ -15,18 +17,7 @@ public class Block : MonoBehaviour
     private Sprite[] damagedSpritesDown, damagedSpritesLeft, damagedSpritesRight, damagedSpritesUp;
     protected SpriteRenderer spriteRenderer;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -41,28 +32,41 @@ public class Block : MonoBehaviour
                 spritesArray = (collisionDirection.y < 0) ? damagedSpritesDown : damagedSpritesUp;
             }
 
-            if (durability > 0)
+            if (canLoseDurability)
             {
-                durability--;
-                spriteRenderer.sprite = spritesArray[durability / durabilityFactor];
-            } else if (durability <= 0) {
-                Destroy(gameObject);
-
-                for (int i = 0; i < lootAmount; i++)
+                if (durability > 0)
                 {
-                    float drop = Random.Range(0.0f, 1.0f);
+                    durability--;
+                    spriteRenderer.sprite = spritesArray[durability / durabilityFactor];
+                }
+                else if (durability <= 0)
+                {
+                    Destroy(gameObject);
 
-                    foreach (KeyValuePair<string, float> entry in lootTable)
+                    for (int i = 0; i < lootAmount; i++)
                     {
-                        if (drop < entry.Value)
+                        float drop = Random.Range(0.0f, 1.0f);
+
+                        foreach (KeyValuePair<string, float> entry in lootTable)
                         {
-                            Inventory inventory = collision.gameObject.GetComponent<Inventory>();
-                            inventory.putItem(entry.Key);
-                            break;
+                            if (drop < entry.Value)
+                            {
+                                Inventory inventory = collision.gameObject.GetComponent<Inventory>();
+                                inventory.putItem(entry.Key);
+                                break;
+                            }
                         }
                     }
                 }
+                canLoseDurability = false;
+                StartCoroutine(loseDurabilityCooldown());
             }
         }
+    }
+
+    IEnumerator loseDurabilityCooldown()
+    {
+        yield return new WaitForSeconds(miningCooldown);
+        canLoseDurability = true;
     }
 }

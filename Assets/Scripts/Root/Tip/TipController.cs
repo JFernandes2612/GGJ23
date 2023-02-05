@@ -20,6 +20,8 @@ public class TipController : MonoBehaviour
     public float knockbackStrength;
     public float knockbackDuration;
 
+    int count = 0;
+
     private Stack<Vector2Int> moves = new Stack<Vector2Int>();
     private Stack<GameObject> instantiatedRootSegments = new Stack<GameObject>();
 
@@ -113,11 +115,22 @@ public class TipController : MonoBehaviour
         }
         */
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Block")
+        {
+            Debug.Log("Colliding " + count);
+            count++;
+        }
+        //StartCoroutine(ApplyKnockback());
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Block")
         {
-            Debug.Log("Colliding");
+            Debug.Log("Entered " + count);
+            count++;
         }
         //StartCoroutine(ApplyKnockback());
     }
