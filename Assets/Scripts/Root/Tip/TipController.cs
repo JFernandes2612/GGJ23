@@ -116,7 +116,10 @@ public class TipController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Block")
-            StartCoroutine(ApplyKnockback());
+        {
+            Debug.Log("Colliding");
+        }
+        //StartCoroutine(ApplyKnockback());
     }
 
     IEnumerator ApplyKnockback()
