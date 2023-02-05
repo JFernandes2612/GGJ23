@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7164017702986746190}
   - component: {fileID: 7164017702986746225}
   - component: {fileID: 7164017702986746226}
-  - component: {fileID: 7164017702986746227}
   - component: {fileID: 8293726403834236532}
   m_Layer: 0
   m_Name: fireseed1
@@ -146,21 +145,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0049057007, y: 0.031883895}
   m_Size: {x: 0.082725525, y: 0.15875614}
   m_Direction: 0
---- !u!114 &7164017702986746227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7164017702986746191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b5825bab5408a04ba92e232578bc19e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  secsBeforeFlames: 1
-  animator: {fileID: 0}
-  animationName: FireSeed_Flying
 --- !u!114 &8293726403834236532
 MonoBehaviour:
   m_ObjectHideFlags: 0
