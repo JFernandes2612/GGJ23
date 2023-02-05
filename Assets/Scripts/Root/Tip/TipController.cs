@@ -128,6 +128,10 @@ public class TipController : MonoBehaviour
         rb.AddForce(-knockbackForce); //nullifies knockback
     }
 
+    public void upgrade() {
+        speed += 0.05f;
+    }
+
     public override string ToString()
     {
         return "Speed: " + speed;
