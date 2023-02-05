@@ -6,7 +6,6 @@ using TMPro;
 public class StatsDisplay : MonoBehaviour
 {
     public GameObject inventoryObject;
-
     private TipController player;
     private TextMeshProUGUI textMesh;
 
@@ -20,6 +19,6 @@ public class StatsDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textMesh.text = player.ToString() + '\n' + "Damage: " + Bullet.getDamage();
+        textMesh.text = "Wave: " + EnemySpawner.wave + '\n' + player.ToString() + "\nDamage: " + Bullet.getDamage() + "\nMining Speed: " + Block.miningCooldown;
     }
 }

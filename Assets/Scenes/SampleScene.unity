@@ -778,8 +778,8 @@ MonoBehaviour:
   bedrockPrefab: {fileID: 6069184230342055419, guid: 63126b19fa0b05b4482bd5bfa9f2b973, type: 3}
   blockPrefabs:
   - {fileID: 528075311513602513, guid: d0a0314fbc0508049bb9f08bd5e18252, type: 3}
-  - {fileID: 6069184230342055419, guid: 596ec710202b06b45b26572a30ba15c7, type: 3}
   - {fileID: 5609366737113207303, guid: 454dfa7638664394b886576d99216e2e, type: 3}
+  - {fileID: 6069184230342055419, guid: 596ec710202b06b45b26572a30ba15c7, type: 3}
 --- !u!4 &1581994298
 Transform:
   m_ObjectHideFlags: 0

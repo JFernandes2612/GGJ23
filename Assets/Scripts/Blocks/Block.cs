@@ -8,7 +8,7 @@ public class Block : MonoBehaviour
     protected int durabilityFactor;
     protected int baseDurability = 4;
     private bool canLoseDurability = true;
-    public float miningCooldown = 0.5f;
+    public static float miningCooldown = 0.5f;
 
     protected Dictionary<string, float> lootTable;
     protected int lootAmount;
