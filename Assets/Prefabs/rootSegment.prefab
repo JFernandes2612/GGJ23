@@ -100,10 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipSprite: {fileID: 21300000, guid: 471ea2e67fb5e4b42bcf324f93face17, type: 3}
   segmentSprites:
-  - {fileID: 21300000, guid: 9cf95d0da010a4b4596815f23689bc96, type: 3}
-  - {fileID: 21300000, guid: 0278dda6b6ed5054f9519205cf20befe, type: 3}
-  - {fileID: 21300000, guid: f6c50441d7cf8414db95cfae0b1cdd8c, type: 3}
-  - {fileID: 21300000, guid: 961257fe631b788438a5b6b11e5f221a, type: 3}
+  - {fileID: 21300000, guid: bcc552a8428cef142b134b4eb0828a62, type: 3}
+  - {fileID: 21300000, guid: 14caa6a831a39c745bbbe5ac03a5ee6e, type: 3}
+  - {fileID: 21300000, guid: f8ad6fb91e3bfe54f9260f7551a3dc1f, type: 3}
 --- !u!61 &6849425765772124001
 BoxCollider2D:
   m_ObjectHideFlags: 0
