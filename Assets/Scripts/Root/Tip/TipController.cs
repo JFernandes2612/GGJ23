@@ -13,6 +13,7 @@ public class TipController : MonoBehaviour
     private Vector3 direction = new Vector3();
     private Vector3 rotation = new Vector3();
 
+    private float topHeight = -0.5f;
     private float blockWidth = 0.1f;
     private Rigidbody2D rb;
     public float knockbackStrength;
@@ -30,7 +31,7 @@ public class TipController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool atTop = transform.position.y >= -0.5;
+        bool atTop = transform.position.y >= topHeight;
 
         float horizontalInput = atTop ? 0 : Input.GetAxisRaw("Horizontal");
         float verticalInput = 0.0f;
@@ -43,11 +44,12 @@ public class TipController : MonoBehaviour
         direction = new Vector3(horizontalInput, verticalInput);
         rotation = new Vector3(0, 0, 90.0f * horizontalInput + (verticalInput != 1.0f ? 180.0f : 0.0f));
 
-        if (atTop && Input.GetButtonDown("Fire1") && moves.Count == 1) {
+        if (atTop && Input.GetButtonDown("Fire1")) {
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mouseDirection = new Vector2(mouseWorldPos.x, mouseWorldPos.y).normalized;
 
-            if (mouseDirection.y > 0.0f) {
+            if (mouseDirection.y > 0.0f)
+            {
                 GameObject newBullet = Instantiate(bullet, mouseDirection, Quaternion.identity);
 
                 newBullet.GetComponent<Rigidbody2D>().AddForce(mouseDirection * bulletSpeed);
@@ -83,16 +85,19 @@ public class TipController : MonoBehaviour
 
                 moves.Push(position2DBox);
                 GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
+                instantiatedObject.transform.eulerAngles = rotation;
                 instantiatedRootSegments.Push(instantiatedObject);
             } else if (moves.Peek() != position2DBox) {
                 moves.Push(position2DBox);
                 GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
+                instantiatedObject.transform.eulerAngles = rotation;
                 instantiatedRootSegments.Push(instantiatedObject);
             }
 
         } else {
             moves.Push(position2DBox);
             GameObject instantiatedObject = Instantiate(rootSegment, positionCopy, Quaternion.identity);
+            instantiatedObject.transform.eulerAngles = rotation;
             instantiatedRootSegments.Push(instantiatedObject);
         }
 
