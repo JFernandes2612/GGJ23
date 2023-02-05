@@ -54,8 +54,6 @@ public class TipController : MonoBehaviour
             Vector2 mouseDirection = new Vector2(mouseWorldPos.x, mouseWorldPos.y).normalized;
 
             float angle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
-            Debug.Log(angle - 90);
-
 
             if (mouseDirection.y > 0.0f)
             {
