@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryObject: {fileID: 1874246385}
-  costTextObject: {fileID: 1073043525}
+  costTextObject: {fileID: 1514841020}
 --- !u!1 &213950387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,7 +1388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryObject: {fileID: 1874246385}
-  costTextObject: {fileID: 1324277682}
+  costTextObject: {fileID: 1073043525}
 --- !u!1 &560272701
 GameObject:
   m_ObjectHideFlags: 0
@@ -2541,7 +2541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryObject: {fileID: 1874246385}
-  costTextObject: {fileID: 1514841020}
+  costTextObject: {fileID: 1324277682}
 --- !u!114 &1373622997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3158,7 +3158,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Upgrade Mining Speed
+  m_text: Upgrade Speed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
